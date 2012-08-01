@@ -14,13 +14,17 @@
 # under the License.
 
 
-def auth_url():
-    """Return the Rackspace Cloud Auth URL"""
+def auth_url_us():
+    """Return the Rackspace Cloud US Auth URL"""
     return "https://identity.api.rackspacecloud.com/v2.0/"
 
 
-def authenticate(cls,
-                 auth_url=auth_url()):
+def auth_url_uk():
+    """Return the Rackspace Cloud UK Auth URL"""
+    return "https://lon.identity.api.rackspacecloud.com/v2.0/"
+
+
+def _authenticate(cls, auth_url):
     """Authenticate against the Rackspace auth service."""
     body = {"auth": {
         "RAX-KSKEY:apiKeyCredentials": {
@@ -28,3 +32,14 @@ def authenticate(cls,
             "apiKey": cls.password,
             "tenantName": cls.projectid}}}
     return cls._authenticate(auth_url, body)
+
+
+def authenticate_us(cls,
+                    auth_url=auth_url_us()):
+    """Authenticate against the Rackspace US auth service."""
+    return _authenticate(cls, auth_url)
+
+def authenticate_uk(cls,
+                    auth_url=auth_url_uk()):
+    """Authenticate against the Rackspace UK auth service."""
+    return _authenticate(cls, auth_url)
