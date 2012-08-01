@@ -1,0 +1,12 @@
+.coverage
+.venv
+.tox
+*,cover
+cover
+*.pyc
+.idea
+*.swp
+*~
+build
+dist
+rackspaceauth.egg-info
