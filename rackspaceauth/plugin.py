@@ -14,8 +14,13 @@
 # under the License.
 
 
+def auth_url():
+    """Return the Rackspace Cloud Auth URL"""
+    return "https://identity.api.rackspacecloud.com/v2.0/"
+
+
 def authenticate(cls,
-                 auth_url="https://identity.api.rackspacecloud.com/v2.0/"):
+                 auth_url=auth_url()):
     """Authenticate against the Rackspace auth service."""
     body = {"auth": {
         "RAX-KSKEY:apiKeyCredentials": {

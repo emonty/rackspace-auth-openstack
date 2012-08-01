@@ -41,6 +41,9 @@ setuptools.setup(
         "Programming Language :: Python"
     ],
     entry_points={
+        "openstack.client.auth_url": [
+            "rackspace = rackspaceauth.plugin:auth_url"
+        ],
         "openstack.client.authenticate": [
             "rackspace = rackspaceauth.plugin:authenticate"
         ]
