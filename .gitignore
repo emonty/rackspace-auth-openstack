@@ -9,4 +9,4 @@ cover
 *~
 build
 dist
-rackspaceauth.egg-info
+rackspace_auth_openstack.egg-info

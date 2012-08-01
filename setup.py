@@ -42,10 +42,10 @@ setuptools.setup(
     ],
     entry_points={
         "openstack.client.auth_url": [
-            "rackspace = rackspaceauth.plugin:auth_url"
+            "rackspace = rackspace_auth_openstack.plugin:auth_url"
         ],
         "openstack.client.authenticate": [
-            "rackspace = rackspaceauth.plugin:authenticate"
+            "rackspace = rackspace_auth_openstack.plugin:authenticate"
         ]
     }
 )
